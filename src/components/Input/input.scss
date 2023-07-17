@@ -1,0 +1,35 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.input {
+  margin-bottom: 20px;
+  padding: 0 16px;
+
+  border: 1.5px solid $input-border-color;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  @include size(100%, 36px, $white, $border-radius);
+  @include text(16px, 16px, $secondary-color, left);
+
+  &::placeholder {
+    @include text(16px, 16px, $secondary-color, left); 
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    border-color: $input-border-color;
+    box-shadow: 0 0 3px $shadow;
+  }
+
+  @include onTablet {
+    height: 48px;
+    padding: 0 20px;
+  }
+
+  @include onDesktop {
+    height: 56px;
+    padding: 0 24px;
+  }
+}

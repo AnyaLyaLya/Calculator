@@ -1,0 +1,140 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.metamask-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+
+  @include size(300px, fit-content, $white, 50px);
+
+  @include onTablet {
+    width: 500px;
+  }
+
+  @include onDesktop {
+    width: 700px;
+  }
+
+  &__content {
+    padding: 24px 12px;
+
+    @include onTablet {
+      padding: 32px 24px;
+    }
+
+    @include onDesktop {
+      padding: 48px 32px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 24px;
+
+    @include onTablet {
+      margin-bottom: 36px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+
+    @include text(14px, 14px, $primary-color);
+
+    @include onTablet {
+      @include text(16px, 16px, $primary-color);
+    }
+
+    @include onDesktop {
+      @include text(20px, 20px, $primary-color);
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 12px;
+
+    @include text(13px, 13px, $secondary-color, 700);
+
+    @include onTablet {
+      @include text(15px, 15px, $secondary-color, 700);
+    }
+
+    @include onDesktop {
+      @include text(19px, 19px, $secondary-color, 700);
+    }
+  }
+
+  &__close-button {
+    @include text(24px, 24px, $primary-color);
+    padding: 0 5px;
+    cursor: pointer;
+
+    @include onDesktop {
+      @include text(36px, 36px, $primary-color);
+    }
+  }
+
+  &__list {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    text-align: justify;
+
+    &--item {
+      margin-bottom: 8px;
+
+      @include text(12px, 12px, $text-color);
+
+      @include onTablet {
+        margin-bottom: 16px;
+
+        @include text(14px, 14px, $text-color);
+      }
+
+      @include onDesktop {
+        margin-bottom: 24px;
+
+        @include text(18px, 18px, $text-color);
+      }
+    }
+  }
+
+  &__footer {
+    &--text {
+      @include text(13px, 13px, $text-color);
+
+      @include onTablet {
+        @include text(15px, 15px, $text-color);
+      }
+  
+      @include onDesktop {
+        @include text(19px, 19px, $text-color);
+      }
+    }
+
+    &--link {
+      text-decoration: none;
+
+      @include text(13px, 13px, $secondary-color);
+
+      @include onTablet {
+        @include text(15px, 15px, $secondary-color);
+      }
+  
+      @include onDesktop {
+        @include text(19px, 19px, $secondary-color);
+      }
+    }
+  }
+}

@@ -1,46 +1,34 @@
-# Getting Started with Create React App
+### Software Engineer Test Task
+# Task Description
+Your task is to develop a single-page site with a simple calculator that performs basic math
+operations.
+The page should have the following layout and free design:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+When a user opens the page, the site should check if the user has connected their wallet
+using Metamask. If Metamask is not connected, the "Calculate" button should not be active,
+and the label "Calculator used" should be hidden.
+Please refer to the following Calculator Contract - https://sepolia.etherscan.io/address/0x1851ffbce02a134efd9ddbc91920b0c6dcefb6f5#code under Sepolia Testnet. The calculator
+operations should be performed by calling the specific functions in the Calculator Contract
+based on the selected operation from a dropdown menu. The functions available in the
+contract are add, subtract, multiply, and divide. You should send a transaction to the
+contract calling the specified function with the input values a and b.
+For testing, you can use the following wallet (with some amount of test eth):
+1433ce1ec08c988b9631e8f63817e0d102eab4f7d4933328fe91e7673970019a
+Additionally, you need to extract the value of the state variable usageCount from the
+contract and display it in the label "Calculator used: usageCount".
 
-## Available Scripts
+# Requirements
+Your implementation should meet the following requirements:
+1. The single-page site should have a responsive layout and a modern design.
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. When the page loads, it should check if Metamask is connected. If not, disable the
+"Calculate" button and hide the "Calculator used" label.
+3. Implement a dropdown menu to select the math operation (add, subtract, multiply, or
+divide).
+4. Implement input fields to enter the values a and b for the selected operation.
+5. Implement a "Calculate" button that sends a transaction to the Calculator Contract
+calling the specified function with the input values a and b.
+6. Display the result of the calculation on the page.
+7. Fetch the value of the usageCount state variable from the Calculator Contract and
+display it in the "Calculator used: usageCount" label. This field should be updated
+after each usage.

@@ -1,0 +1,95 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.custom-select {
+  display: inline-block;
+  position: relative;
+
+  &__select {
+    margin-bottom: 20px;
+    padding: 0 16px;
+    appearance: none;
+    border: 1.5px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    @include size(100%, 36px, $white, $border-radius);
+    @include text(16px, 16px, $secondary-color, left); 
+
+    &:hover,
+    &:focus {
+      outline: none;
+      border-color: $input-border-color;
+      box-shadow: 0 0 3px $shadow;
+    }
+
+    @include onTablet {
+      height: 48px;
+      padding: 0 20px;
+    }
+  
+    @include onDesktop {
+      height: 56px;
+      padding: 0 24px;
+    }
+  }
+
+  &__options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: $white;
+    border: 1px solid $input-border-color;
+    border-top: none;
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+    box-shadow: 0 2px 4px $shadow;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $background-color;
+      border-radius: $border-radius;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: $background-color;
+    }
+  }
+
+  &__option {
+    padding: 16px 16px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: green;
+    }
+
+    &--selected {
+      background-color: $primary-color;
+      color: $text-color;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 35%;
+    right: 20px;
+    transform: translateY(-35%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #555;
+    pointer-events: none;
+  }
+}

@@ -1,0 +1,145 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.calculator{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+
+  height: 100vh;
+  
+  padding: 20px;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 24px;
+    box-shadow: 0 0 12px $shadow;
+
+    @include size(500px, 500px, $background-color, 50px);
+
+    @include onTablet {
+      padding: 36px;
+    }
+
+    @include onDesktop {
+      padding: 48px;
+
+      @include size(614px, 614px, $background-color, 50px);
+    }
+  }
+
+  &__title {
+    margin-bottom: 12px;
+
+    @include text(32px, 48px, $text-color, 700);  
+
+    @include onTablet {
+      @include text(40px, 54px, $text-color, 700);
+
+      margin-bottom: 24px;
+    } 
+
+    @include onDesktop {
+      @include text(56px, 64px, $text-color, 700);
+    }
+  }
+
+  &__result {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    margin-bottom: 20px;
+
+    &-label {
+      @include text(16px, 16px, $secondary-color);     
+
+      margin: auto;
+      padding: 0 10px;
+
+      @include onTablet {
+        @include text(20px, 20px, $secondary-color);
+      }
+
+      @include onDesktop {
+        @include text(24px, 24px, $secondary-color);
+      }
+    }
+
+    &-value {
+      display: flex;
+      justify-content: center;
+
+      border: 1.5px solid $input-border-color;
+      box-shadow: 0 0 3px $shadow;
+
+      @include size(100%, 36px, $white, $border-radius);
+      @include text(16px, 36px, $text-color); 
+
+      @include onTablet {
+        height: 48px;
+
+        @include text(18px, 48px, $text-color); 
+      }
+
+      @include onDesktop {
+        height: 56px;
+
+        @include text(20px, 56px, $text-color); 
+      }
+    }
+  }
+
+  &__button {
+    margin-bottom: 24px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    @include size(100%, 36px, $primary-color, $border-radius);
+    @include text(16px, 36px, $white, 700); 
+
+    &:hover {
+      border: 1px solid $primary-color;
+      color: $text-color;
+      background-color: $white;
+    }
+
+    &--disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+
+    @include onTablet {
+      height: 48px;
+      font-size: 24px;
+      margin-bottom: 36px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 48px;
+      height: 56px; 
+      font-size: 36px;
+    }
+  }
+
+  &__used-count {
+    @include text(14px, 14px, $secondary-color);
+
+    @include onTablet {
+      @include text(16px, 16px, $secondary-color);
+    }
+
+    @include onDesktop {
+      @include text(20px, 20px, $secondary-color);
+    }
+  }
+}

@@ -1,34 +1,30 @@
-### Software Engineer Test Task
-# Task Description
-Your task is to develop a single-page site with a simple calculator that performs basic math
-operations.
-The page should have the following layout and free design:
+### Calculator App
+The Calculator App is a simple React application that includes the Calculator component and a MetamaskMessage component. The application checks whether Metamask (Ethereum wallet) is connected and displays a message if it's not connected.
 
-When a user opens the page, the site should check if the user has connected their wallet
-using Metamask. If Metamask is not connected, the "Calculate" button should not be active,
-and the label "Calculator used" should be hidden.
-Please refer to the following Calculator Contract - https://sepolia.etherscan.io/address/0x1851ffbce02a134efd9ddbc91920b0c6dcefb6f5#code under Sepolia Testnet. The calculator
-operations should be performed by calling the specific functions in the Calculator Contract
-based on the selected operation from a dropdown menu. The functions available in the
-contract are add, subtract, multiply, and divide. You should send a transaction to the
-contract calling the specified function with the input values a and b.
-For testing, you can use the following wallet (with some amount of test eth):
-1433ce1ec08c988b9631e8f63817e0d102eab4f7d4933328fe91e7673970019a
-Additionally, you need to extract the value of the state variable usageCount from the
-contract and display it in the label "Calculator used: usageCount".
+# Getting Started
+To use the Calculator App, you need to have the following installed in your project:
 
-# Requirements
-Your implementation should meet the following requirements:
-1. The single-page site should have a responsive layout and a modern design.
+React: The application is built using React, so make sure you have React set up in your project.
 
-2. When the page loads, it should check if Metamask is connected. If not, disable the
-"Calculate" button and hide the "Calculator used" label.
-3. Implement a dropdown menu to select the math operation (add, subtract, multiply, or
-divide).
-4. Implement input fields to enter the values a and b for the selected operation.
-5. Implement a "Calculate" button that sends a transaction to the Calculator Contract
-calling the specified function with the input values a and b.
-6. Display the result of the calculation on the page.
-7. Fetch the value of the usageCount state variable from the Calculator Contract and
-display it in the "Calculator used: usageCount" label. This field should be updated
-after each usage.
+CSS/SCSS: The application uses CSS for styling. Ensure you have a mechanism to process CSS files.
+
+Dependencies: The application uses various dependencies such as 'react', 'react-dom', etc. Make sure you have them installed in your project.
+
+# Technologies Used
+The Calculator App is built using modern web development technologies to create an interactive and user-friendly interface. Below are the key technologies used in the project:
+
+- React
+- HTML & SCSS
+- JavaScript (ES6+)
+- useState Hook (React)
+- useEffect Hook (React)
+- Metamask (Ethereum Wallet)
+- Web3 (Optional)
+
+# Development and Build Tools
+Apart from the technologies mentioned above, the Calculator App might use various development and build tools, depending on the project's setup and requirements. Some common tools include:
+
+- Node.js & npm (Node Package Manager)
+- Webpack
+- Babel
+- SCSS/Sass Compiler

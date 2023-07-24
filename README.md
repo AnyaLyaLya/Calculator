@@ -1,4 +1,4 @@
-### Calculator App
+# [Calculator App](https://anyalyalya.github.io/Calculator/)
 The Calculator App is a simple React application that includes the Calculator component and a MetamaskMessage component. The application checks whether Metamask (Ethereum wallet) is connected and displays a message if it's not connected.
 
 # Getting Started
